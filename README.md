@@ -5,7 +5,7 @@ a simple book reviews application using AWS Lambda and Serverless framework.
 ## Functionality of the application
 
 This application will allow creating/removing/updating/fetching books and their reviews. Each book can optionally have an cover image.
-Every book and review can be seen by all users; however, removing and updating can only be done by the original creator.
+Every book and review can be seen by all users; however, **removing and updating can only be done by the original creator**.
 
 ### Books
 
@@ -32,3 +32,7 @@ The application also stores Reviews, and each Review contains the following fiel
 * `comment` (string) - the comment made by the user
 * `score` (number) - the score for the book given by the user
 * `modifiable` (boolean) - true if the requesting user is the creator (which means they can remove or update this book), false otherwise
+
+## Testing of the application
+
+In order to test the application, Postman can be used with `Book Reviews Made Serverless.postman_collection.json` prepared collection. It includes collection wide authorization feature; however, it requires up-to-date Postman in order to create an access token.
