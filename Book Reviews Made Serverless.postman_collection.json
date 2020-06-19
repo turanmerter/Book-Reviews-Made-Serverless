@@ -1,0 +1,390 @@
+{
+	"info": {
+		"_postman_id": "bf5eb8e9-8208-4381-a77a-e369d70a929d",
+		"name": "Book Reviews Made Serverless",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "Get all books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/books",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create book",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"namename 2\",\n\t\"author\": \"authorauthor 2\",\n\t\"summary\": \"summarysummary 2\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/books",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update book",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"namename 7\",\n\t\"author\": \"authorauthor 7\",\n\t\"summary\": \"summarysummary 7\"\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/books/47b369ce-cb46-4f03-af03-f16ae0b79e8c",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"books",
+								"47b369ce-cb46-4f03-af03-f16ae0b79e8c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete book",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/books/47b369ce-cb46-4f03-af03-f16ae0b79e8c",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"books",
+								"47b369ce-cb46-4f03-af03-f16ae0b79e8c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get cover upload URL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/books/2f611812-bac6-4ca1-8292-0ac6de9a6ead/cover",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"books",
+								"2f611812-bac6-4ca1-8292-0ac6de9a6ead",
+								"cover"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reviews",
+			"item": [
+				{
+					"name": "Get book reviews",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/bookReviews/2f611812-bac6-4ca1-8292-0ac6de9a6ead",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"bookReviews",
+								"2f611812-bac6-4ca1-8292-0ac6de9a6ead"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"bookId\": \"2f611812-bac6-4ca1-8292-0ac6de9a6ead\",\n\t\"comment\": \"comment 2\",\n\t\"score\": 3\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/reviews",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update review",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"comment\": \"updated comment\",\n\t\"score\": 5\n}"
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/reviews/888fccf0-c613-454d-b7ab-5263cb6f1908",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"reviews",
+								"888fccf0-c613-454d-b7ab-5263cb6f1908"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete review",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{apiId}}.execute-api.us-east-1.amazonaws.com/dev/reviews/be1e0c25-cf73-4628-a68d-be2347e54fde",
+							"protocol": "https",
+							"host": [
+								"{{apiId}}",
+								"execute-api",
+								"us-east-1",
+								"amazonaws",
+								"com"
+							],
+							"path": [
+								"dev",
+								"reviews",
+								"be1e0c25-cf73-4628-a68d-be2347e54fde"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessToken",
+				"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlRsZ3dJMUNla2VXS1RSZkVIaFROYSJ9.eyJpc3MiOiJodHRwczovL2Rldi0ydDZyazljOC5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDIwMTAwMzU1NzczNDA0OTA5ODUiLCJhdWQiOlsiaHR0cHM6Ly9jejhmbnU4eHY0LmV4ZWN1dGUtYXBpLnVzLWVhc3QtMS5hbWF6b25hd3MuY29tIiwiaHR0cHM6Ly9kZXYtMnQ2cms5YzguYXV0aDAuY29tL3VzZXJpbmZvIl0sImlhdCI6MTU5MjU1MzEyNywiZXhwIjoxNTkyNjM5NTI3LCJhenAiOiJRVDZZM240WkJYTlJzMG5kUzc1bFFPc21rMVQ0SDlYMCIsInNjb3BlIjoib3BlbmlkIHByb2ZpbGUgZW1haWwifQ.lm5tqIZMx9Ho4Ctmi9O91P2jza3rGEDrQjNjqWWtEqe71o0UTRN2XaB47_eL6wpyRr-nZWvOAZ0juJ6S0AGqNJtFEbgEm8B9MBVrPZYYZFQbCcV-TMMogwyWygweYyEj9jNk3GVYpxsHlNawQi0wtkBkg0JahUoV8zw83ptrlLwEamJG3ld5Nm6f_SvJzmykWhXVkPbEy4RHQzpuN60zjhkm_3GSrFjHAsyyMZmJA1GIe6hFUKWUxCIrxlH8IsI_B2khMmEgh3G2lzndr4jgqSjBCxZ0SX087pdrYPJBoXe4BFwDYQOp0U6HPYj4YgJ4ac0LTmDNSPS2bQE1b2Zlpw",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "76012944-6a1e-44f4-b678-77e717cec403",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "650ad8db-e3cf-4dbb-99c4-4571e20f7605",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "103519d5-26ee-469a-8e18-d58167bc8182",
+			"key": "apiId",
+			"value": "5pfa0f8xug",
+			"type": "string"
+		},
+		{
+			"id": "8a5b3d78-7406-4d38-81fa-30c823ef0a36",
+			"key": "authToken",
+			"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlRsZ3dJMUNla2VXS1RSZkVIaFROYSJ9.eyJpc3MiOiJodHRwczovL2Rldi0ydDZyazljOC5hdXRoMC5jb20vIiwic3ViIjoiZ29vZ2xlLW9hdXRoMnwxMDIwMTAwMzU1NzczNDA0OTA5ODUiLCJhdWQiOiJPbFJnUXV5Q29jZjNHTmR3dVkxUlpQdlMzakMweEppNyIsImlhdCI6MTU5MjQxNTIwMSwiZXhwIjoxNTkyODQ3MjAxLCJhdF9oYXNoIjoiWmJQbVRrMDNZWUhXN1UzbURpYlg4USIsIm5vbmNlIjoiTVhVOFFaVkV6SThzYWRSQWZCWXA1NVJ3bVhBVE1CbjEifQ.EHmUetpDsufchntFzBfuDq5vD8YyLsGpXh_Mt2YPKsoftCZNT9gozdoPvCCoCGBaHG47eqt7jensYluFYMuogGY78dkk04y9-eqJHTPIgcMesh7muFjyKDTzKNvmY6OZKZeoI6mY81AQCjaU7P9bvvY-Rhg7WGgDsVtOpd7dAnIbRajxl5bqsGFnKZGeIyadZNGkYIyMzAXXI6-Rb9SuTup6zolGdYPeGg2U8c47weh9MoR1drl2pvotxWwxK9YgndDgzvW_u-f-QLnBzSsOA-7Rr7DAANJetekf5BnAN7rw6lxQ0jrnb7R0BAb5p6L1eSn_LZ86afrR82TtRzxk0Q",
+			"type": "string"
+		},
+		{
+			"id": "fe5db00c-6d42-445f-8bb0-c1a82a93348a",
+			"key": "auth0_domain",
+			"value": "dev-2t6rk9c8.auth0.com",
+			"type": "string"
+		},
+		{
+			"id": "54f7f7d9-7216-4fcd-aaa6-add6fcca9946",
+			"key": "auth0_client_id",
+			"value": "61QpJ5mqupevvvtH2gwkxnCdyM0yxjAI",
+			"type": "string"
+		},
+		{
+			"id": "89d50fbc-91a8-41ae-bf02-eaf53393a999",
+			"key": "auth0_client_secret",
+			"value": "E5FEDe9mwK1Z5U77zSRIU3JWRhZ1SGKy6Fg_lIXctic0NP9hlRNRTps6nT1tY9yF",
+			"type": "string"
+		},
+		{
+			"id": "f9599799-49d1-4f2e-ab19-b4349c71bc70",
+			"key": "auth0_audience",
+			"value": "https://cz8fnu8xv4.execute-api.us-east-1.amazonaws.com",
+			"type": "string"
+		}
+	]
+}

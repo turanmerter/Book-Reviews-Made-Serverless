@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "todo",
+  "type": "object",
+  "properties": {
+    "comment": {
+      "type": "string"
+    },
+    "score": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "comment",
+    "score"
+  ],
+  "additionalProperties": false
+}
